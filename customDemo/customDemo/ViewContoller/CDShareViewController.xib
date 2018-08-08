@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CDShareViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGZ-4l-R4d">
+                    <rect key="frame" x="146" y="318" width="82" height="30"/>
+                    <state key="normal" title="Activity分享"/>
+                    <connections>
+                        <action selector="testShare" destination="-1" eventType="touchUpInside" id="OMh-BN-ZpL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88b-UW-nZh">
+                    <rect key="frame" x="163" y="391" width="49" height="30"/>
+                    <state key="normal" title="SL分享"/>
+                    <connections>
+                        <action selector="SLShare" destination="-1" eventType="touchUpInside" id="ggr-B7-dLp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-iE-so2">
+                    <rect key="frame" x="156" y="258" width="62" height="30"/>
+                    <state key="normal" title="微信分享"/>
+                    <connections>
+                        <action selector="wechatShare" destination="-1" eventType="touchUpInside" id="SxU-mE-mIi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="88b-UW-nZh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IAT-gl-AQ2"/>
+                <constraint firstItem="cGZ-4l-R4d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YQC-oe-nWw"/>
+                <constraint firstItem="cGZ-4l-R4d" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hmv-ed-BAd"/>
+                <constraint firstItem="KJ5-iE-so2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="258" id="q08-Ht-f6O"/>
+                <constraint firstItem="KJ5-iE-so2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="snU-NT-91P"/>
+                <constraint firstAttribute="bottom" secondItem="88b-UW-nZh" secondAttribute="bottom" constant="246" id="wT5-NB-9Vf"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="117.5"/>
+        </view>
+    </objects>
+</document>
