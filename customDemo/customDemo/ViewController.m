@@ -11,6 +11,7 @@
 #import "CDSearchViewController.h"
 #import "CDShareViewController.h"
 #import "UIViewController+NavBarHidden.h"
+#import "CDVideoViewController.h"
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
@@ -40,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArr = [[NSMutableArray alloc]initWithArray:@[@"测试拍视频",@"UISearchController",@"测试系统分享",@"上传和下载"]];;
+    self.dataArr = [[NSMutableArray alloc]initWithArray:@[@"测试拍视频",@"UISearchController",@"测试系统分享",@"上传和下载",@"播放视频"]];;
     
     self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     
@@ -58,6 +59,8 @@
             [self openShareViewController];
         } else if (indexPath.row == 3) {
             [self openShareViewController];
+        } else if (indexPath.row == 4) {
+            [self openVideoViewController];
         }
     };
     TableViewCellHeightBlock heightBlock = ^CGFloat(NSIndexPath* indexPath,id item){
@@ -119,6 +122,11 @@
 
 - (void)uploadAndDownload {
     CDShareViewController *cdRecord = [[CDShareViewController alloc]init];
+    [self.navigationController pushViewController:cdRecord animated:YES];
+}
+
+- (void)openVideoViewController {
+    CDVideoViewController *cdRecord = [[CDVideoViewController alloc]init];
     [self.navigationController pushViewController:cdRecord animated:YES];
 }
 

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "WXApi.h"
 #import "CDSharemanager.h"
+#import <JSPatchPlatform/JSPatch.h>
+
 #define AppId @"wx0c96d8611cfb6f57"
 @interface AppDelegate ()
 
@@ -20,6 +22,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [WXApi registerApp:AppId];
+    NSLog(@"sandPath:%@",NSHomeDirectory());
+    // JSPatch接入
+//    [JSPatch testscjsinbund];
+    [JSPatch startWithAppKey:@"1c8601f1552a6eab"];
+    [JSPatch setupRSAPublicKey:@"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDAyVdH7h82k19K/zrXdhFEZ+H5\nR17/DRJGV5cjObA2cm+Gt+eKSKRLKDm+UCsHX8Kb5MmLXS8x9I81e0VkZ+Vlt2o/\n62rRqwLTx3ciUMf4gNCDkQPglZqX0REW5zbQU887GF4/XlRjX83btAdh7JX1u3Zh\n7sD9+ThYP3pq4IYWKQIDAQAB\n-----END PUBLIC KEY-----"];
+#ifdef DEBUG
+    [JSPatch setupDevelopment]; // 开发预览
+    [JSPatch showDebugView];
+#endif
+    [JSPatch sync];
     return YES;
 }
 
