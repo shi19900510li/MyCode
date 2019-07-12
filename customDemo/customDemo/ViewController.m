@@ -12,6 +12,8 @@
 #import "CDShareViewController.h"
 #import "UIViewController+NavBarHidden.h"
 #import "CDVideoViewController.h"
+#import "CDChatViewController.h"
+#import "CDChatInputViewController.h"
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
@@ -41,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArr = [[NSMutableArray alloc]initWithArray:@[@"测试拍视频",@"UISearchController",@"测试系统分享",@"上传和下载",@"播放视频"]];;
+    self.dataArr = [[NSMutableArray alloc]initWithArray:@[@"测试拍视频",@"UISearchController",@"测试系统分享",@"上传和下载",@"播放本地视频",@"播放直播",@"聊天输入框"]];;
     
     self.tab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     
@@ -61,6 +63,10 @@
             [self openShareViewController];
         } else if (indexPath.row == 4) {
             [self openVideoViewController];
+        } else if (indexPath.row == 5) {
+            [self openChatViewController];
+        } else if (indexPath.row == 6) {
+            [self openChatInputViewController];
         }
     };
     TableViewCellHeightBlock heightBlock = ^CGFloat(NSIndexPath* indexPath,id item){
@@ -129,6 +135,17 @@
     CDVideoViewController *cdRecord = [[CDVideoViewController alloc]init];
     [self.navigationController pushViewController:cdRecord animated:YES];
 }
+
+- (void)openChatViewController {
+    CDChatViewController *cdRecord = [[CDChatViewController alloc]init];
+    [self.navigationController pushViewController:cdRecord animated:YES];
+}
+
+- (void)openChatInputViewController {
+    CDChatInputViewController *cdRecord = [[CDChatInputViewController alloc]init];
+    [self.navigationController pushViewController:cdRecord animated:YES];
+}
+
 
 #pragma mark CDRecordVideoDelegate
 - (void)finishWechatShortVideoCapture:(NSURL *)filePath showImage:(UIImage *)image {

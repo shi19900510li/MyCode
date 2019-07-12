@@ -117,3 +117,14 @@ return shared##classname;   \
 
 #define k_sysVersion (float)[[[UIDevice currentDevice] systemVersion] floatValue]
 
+
+#define DDLog(FORMAT, ...)   fprintf(stderr, "\n[%s]  function:%s line:%d content:%s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#define WeakSelf  __weak __typeof(&*self)weakSelf = self;
+
+#define kGreenColor RGBCOLOR(0, 201, 144)
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
+
+
